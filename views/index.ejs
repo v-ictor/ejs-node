@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= title %></title>
+    <%- include('partials/head') %>
+</head>
+
+<body class="container">
+
+    <%- include('partials/header') %>
+    <% if(entries.length) { %>
+    <% entries.forEach(function(entry){ %>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <%= entry.title %>
+            <div class="pull-right">
+                <%= entry.publish %>
+            </div>
+        </div>
+        <div class="panel-body">
+            <%= entry.content %>
+        </div>
+    </div>
+    <% }) %>
+    <% } else { %>
+    <p>No existe entradas</p>
+    <% } %>
+
+</body>
+
+</html>
